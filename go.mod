@@ -1,4 +1,4 @@
-module link-tracker
+module github.com/mudit088/LinkTracker
 
 go 1.25.0
 

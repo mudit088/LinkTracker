@@ -1,8 +1,8 @@
 package routes
 
 import (
-	"link-tracker/controllers"
-	"link-tracker/middleware"
+	"github.com/mudit088/LinkTracker/controllers"
+	"github.com/mudit088/LinkTracker/middleware"
 
 	"github.com/gofiber/fiber/v2"
 )

@@ -2,7 +2,7 @@ package controllers
 
 import (
 	"fmt"
-	"link-tracker/config"
+	"github.com/mudit088/LinkTracker/config"
 	"strings"
 
 	"github.com/gofiber/fiber/v2"

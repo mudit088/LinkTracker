@@ -1,12 +1,12 @@
 package controllers
 
 import (
-    "link-tracker/config"
-    "github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2"
+	"github.com/mudit088/LinkTracker/config"
 )
 
 type ProfileInput struct {
-    Username string `json:"username"`
+	Username string `json:"username"`
     Bio      string `json:"bio"`
 }
 

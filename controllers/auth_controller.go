@@ -2,10 +2,9 @@ package controllers
 
 import (
 	"database/sql"
-	"link-tracker/config"
-	"link-tracker/utils"
-
 	"github.com/gofiber/fiber/v2"
+	"github.com/mudit088/LinkTracker/config"
+	"github.com/mudit088/LinkTracker/utils"
 	"golang.org/x/crypto/bcrypt"
 )
 
