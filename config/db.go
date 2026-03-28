@@ -29,7 +29,7 @@ func ConnectDB() {
 			os.Getenv("DB_NAME"),
 			os.Getenv("DB_PORT"),
 		)
-	}
+		
 
 	db, err := sql.Open("postgres", connStr)
 	if err != nil {
@@ -43,4 +43,5 @@ func ConnectDB() {
 
 	DB = db
 	log.Println("Database connected ✅")
+}
 }
