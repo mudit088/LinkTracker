@@ -11,20 +11,26 @@ import (
 )
 
 func main() {
-    err := godotenv.Load()
-    if err != nil {
-        log.Fatal("Error loading .env file")
-    }
 
-    config.ConnectDB()
+	// Load .env only in local (ignore error in production)
+	_ = godotenv.Load()
 
-    app := fiber.New()
+	config.ConnectDB()
 
-    app.Get("/", func(c *fiber.Ctx) error {
-        return c.SendString("API is running 🚀")
-    })
+	app := fiber.New()
 
-    routes.AuthRoutes(app)
+	app.Get("/", func(c *fiber.Ctx) error {
+		return c.SendString("API is running 🚀")
+	})
 
-    app.Listen(":" + os.Getenv("PORT"))
+	routes.AuthRoutes(app)
+	//routes.LinkRoutes(app) // make sure you added this
+
+	// Railway PORT fix
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "3000"
+	}
+
+	log.Fatal(app.Listen(":" + port))
 }
